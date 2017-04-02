@@ -7,13 +7,18 @@ import java.util.List;
 /**
  * Deck of cards to use for poker.
  * 
- * Initially a standard 52-card French deck; future goal includes adding options like jokers wild
+ * Initially a standard 52-card French deck
+ * 
+ * TODO future goal: add options like "jokers wild"
  */
 public class Deck {
     private List<Card> deck;
+    
+    public static final int DECK_SIZE = 52;
 
     public Deck() {
-        deck = new ArrayList<Card>(52);
+        deck = new ArrayList<Card>(DECK_SIZE);
+        
         deck.add(new Card(CardSuit.SPADES, CardRank.TWO));
         deck.add(new Card(CardSuit.SPADES, CardRank.THREE));
         deck.add(new Card(CardSuit.SPADES, CardRank.FOUR));

@@ -1,7 +1,7 @@
 package com.plaidpuma.poker.mechanics;
 
-public enum CardRank
-{
+public enum CardRank {
+    //@formatter:off
     TWO     ('2', 2, "deuce", "deuces"),
     THREE   ('3', 3, "trey", "treys"),
     FOUR    ('4', 4, "four", "fours"),
@@ -14,7 +14,8 @@ public enum CardRank
     JACK    ('J', 11, "jack", "jacks"),
     QUEEN   ('Q', 12, "queen", "queens"),
     KING    ('K', 13, "king", "kings"),
-    ACE     ('A', 14, "ace", "aces");
+    ACE     ('A', 14, "ace", "aces"); // TODO: what if aces are low, as in A-5 straights and some lowball games?
+    //@formatter:on
 
 	private char symbol;
 	private int value;
