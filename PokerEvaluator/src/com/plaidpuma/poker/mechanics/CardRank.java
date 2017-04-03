@@ -49,4 +49,42 @@ public enum CardRank {
     {
         return this.namePlural;
     }
+
+    public static CardRank getRankByLetter(char rankLetter) throws InvalidCardException {
+        switch (rankLetter) {
+        case '2':
+            return TWO;
+        case '3':
+            return THREE;
+        case '4':
+            return FOUR;
+        case '5':
+            return FIVE;
+        case '6':
+            return SIX;
+        case '7':
+            return SEVEN;
+        case '8':
+            return EIGHT;
+        case '9':
+            return NINE;
+        case 't':
+        case 'T':
+            return TEN;
+        case 'j':
+        case 'J':
+            return JACK;
+        case 'q':
+        case 'Q':
+            return QUEEN;
+        case 'k':
+        case 'K':
+            return KING;
+        case 'a':
+        case 'A':
+            return ACE;
+        default:
+            throw new InvalidCardException("Could not create unrecognized card rank '"+ rankLetter + "'");
+        }
+    }
 }

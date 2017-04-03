@@ -11,19 +11,35 @@ public enum CardSuit {
     private char symbol;
     private String name;
 
-    private CardSuit(char symbol, String name)
-    {
+    private CardSuit(char symbol, String name) {
         this.symbol = symbol;
         this.name = name;
     }
 
-    public char getSymbol()
-    {
+    public char getSymbol() {
         return symbol;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
+    }
+
+    public static CardSuit getSuitByLetter(char suitLetter) throws InvalidCardException {
+        switch (suitLetter) {
+            case 's':
+            case 'S':
+                return SPADES;
+            case 'h':
+            case 'H':
+                return HEARTS;
+            case 'd':
+            case 'D':
+                return DIAMONDS;
+            case 'c':
+            case 'C':
+                return CLUBS;
+            default:
+                throw new InvalidCardException("Could not create unrecognized suit '"+ suitLetter + "'");
+        }
     }
 }
